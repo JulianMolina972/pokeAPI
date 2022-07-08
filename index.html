@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" description="Julian Molina" />
+  <title>PokeAPI</title>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <header>
+    <h1>PokeAPI ⚡</h1>
+  </header>
+  <main class="pokedex">
+    <section class="pokedex-pokemon">
+      <div class="pokemon-img">
+        <button class="pokemon-button" onclick="prevImg()">
+          <
+        </button>
+        <img src="" alt="name's pokemon" id="pokeImg">
+        <button class="pokemon-button" 
+        onclick="nextImg()">
+          >
+        </button>
+        <div class="pokemon--stats">
+          <div class="pokemon--hp">
+            <span>Health Points</span>
+            <span id="hp">0</span>
+          </div>
+          <div class="pokemon--Attack">
+            <span>Attack</span>
+            <span id="atk">0</span>
+          </div>
+          <div class="pokemon-defense">
+            <span>Defense</span>
+            <span id="dfs">0</span>
+          </div>
+          <div class="pokemon-attack-sp">
+            <span>Attack Special</span>
+            <span id="sp-atk">0</span>
+          </div>
+          <div class="pokemon-defense-sp">
+            <span>Defense Special</span>
+            <span id="sp-dfs">0</span>
+          </div>
+          <div class="pokemon-speed">
+            <span>Speed</span>
+            <span id="spd">0</span>
+          </div>
+        </div>
+        <div class="pokedex-next">
+          <button class="pokedex-button" onclick="prevPokemon()">
+            Prev Pokemon
+          </button>
+          <button class="pokedex-button" onclick="nextPokemon()">
+            Next Pokemon
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="pokedex-info">
+
+      <div class="pokemon-description">
+        <p id="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, non consequuntur error</p>
+      </div>
+      <ul class="pokedex-evolution" id="evol">
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <h2>Made by Julian Molina and Platzi 💚</h2> 
+  </footer>
+  <script src="./src/nodes.js"></script>
+  <script src="./src/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "pokeapi",
+  "version": "1.0.0",
+  "description": "consuming PokeAPI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulianMolina972/pokeAPI.git"
+  },
+  "keywords": [
+    "api",
+    "consuming"
+  ],
+  "author": "Julian Molina <juliandavidmv@ufps.edu.co>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JulianMolina972/pokeAPI/issues"
+  },
+  "homepage": "https://github.com/JulianMolina972/pokeAPI#readme"
+}
