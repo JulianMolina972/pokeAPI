@@ -41,6 +41,8 @@ span, p{
   text-transform: capitalize;
   text-align: center;
   font-size: 2.5rem;
+  position: relative;
+  top: 10px;
 }
 .pokedex {
   display: flex;
@@ -82,6 +84,9 @@ span, p{
   text-transform: lowercase;
   margin-bottom: 10px;
   top: 15px;
+  
+}
+.pokemon-desc__one{
   padding: 0 20px;
 }
 .pokemon-img {
