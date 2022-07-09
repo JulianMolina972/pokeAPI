@@ -25,8 +25,8 @@ const printPokemon = async (pokemon) => {
   ? sprites = []
   : null;
   currentPokemon = data;
+  pokeName.textContent = data.name;
   pokeImg.src = data.sprites.front_default;
-  // pokeDesc.textContent = data.name;
   [pokeHp, pokeAtk, pokeDef, pokeAtkSp, pokeDefSp, pokeSpd].map(
     (node, index) => {
       node.style.width = `${data.stats[index].base_stat/2}%`;
@@ -43,12 +43,15 @@ const printPokemon = async (pokemon) => {
     }
     
   }
-
   return currentPokemon;
 };
 
 const printPokemons = async (api) => {
+  const loader = document.createElement('li');
+  loader.classList.add('loader');
+  pokemonsList.append(loader);
   const pokemons = await fetchData(api);
+  loader.remove();
   listPokemons = pokemons;
   pokemons.results.map(async (pokemon) => {
     const listItem = document.createElement('li');
@@ -124,6 +127,13 @@ const prevPokemons = async () => {
   }
 }
 
+const searchPokemon = async () => {
+  event.preventDefault();
+  const input = event.target.search;
+  const res = await fetchData(`${POKEMON_API}/${input.value}`);
+  console.log(res);
+  printPokemon(res.id);
+};
 
 printPokemon(1);
 printPokemons(`${BASE_API}/pokemon?limit=15&offset=0`);

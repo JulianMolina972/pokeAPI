@@ -1,4 +1,5 @@
 const $ = (id) => document.querySelector(id);
+const pokeName = $("#pokeName");
 const pokeImg = $('#pokeImg');
 const pokeDesc = $('#desc');
 const pokeHp = $('#hp');

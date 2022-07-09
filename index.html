@@ -14,6 +14,7 @@
   </header>
   <main class="pokedex">
     <section class="pokedex-pokemon">
+      <h2 class="pokedex--name" id="pokeName"></h2>
       <div class="pokemon-img">
         <button class="pokemon-button" onclick="prevImg()">
           <
@@ -24,6 +25,10 @@
           >
         </button>
       </div>
+      <form onsubmit="searchPokemon()" class="pokedex--form">
+        <input type="text" name="search" class="input">
+        <button type="submit" >Search</button>
+      </form>
       <div class="pokedex-next">
         <button class="pokedex-button" onclick="prevPokemon()">
           Prev Pokemon
@@ -80,18 +85,7 @@
       </div>
       
     </section>
-    <!-- <div class="pokedex-next">
-      <button class="pokedex-button" onclick="prevPokemon()">
-        Prev Pokemon
-      </button>
-      <button class="pokedex-button" onclick="nextPokemon()">
-        Next Pokemon
-      </button>
-    </div> -->
-  
-
   </main>
-
   <section class="pokemonsListNew">
     <h2>More pokemon</h2>
     <div class="pokemonsListNew--button">

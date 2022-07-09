@@ -24,21 +24,23 @@ header, footer{
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  /* margin: 15px 0; */
 }
 
 button {
   border: none;
   box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
-
 }
 button:hover {
   cursor: pointer;
-  /* opacity: 0.7; */
-  
 }
 span, p{
   font-size: 1.5rem;
+}
+
+.pokedex--name{
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 2.5rem;
 }
 .pokedex {
   display: flex;
@@ -46,7 +48,6 @@ span, p{
   width: 90%;
   margin: 0 auto;
   max-width: 900px;
-  /* border: 2px solid black; */
   border-radius: 30px;
   padding: 0 20px;
   background-color: #fb2934;
@@ -55,10 +56,13 @@ span, p{
 .pokedex-pokemon{
   max-width: 500px;
 }
+
+.pokemon--stats {
+  padding: 0 20px;
+}
 .pokemon--stats span{
   display: block;
   padding: 3px 0;
-  /* text-align: center; */
 }
 
 .pokemon-speed{
@@ -67,28 +71,22 @@ span, p{
 .progress-bar {
   width: 100%;
   text-align: center;
-  border: 2px solid black;
+  border: 2px solid rgb(63, 53, 53);
 }
 
 .progress-bar span {
-  background-color: gray;
+  background-color: #1c3163;
 }
 
-
-
 .pokemon-description{
-  /* position: absolute;
-  width: 400px;
-  height: 100px; */
-  /* justify-content: center; */
   text-transform: lowercase;
   margin-bottom: 10px;
   top: 15px;
+  padding: 0 20px;
 }
 .pokemon-img {
   display: flex;
   margin: 0 auto;
-
 }
 
 .pokemon-img img {
@@ -97,10 +95,7 @@ span, p{
   width: 50%;
   height: 50%;
   object-fit: cover;
-
-
 }
-
 
 .pokemon-button {
   /* position: sticky; */
@@ -110,9 +105,33 @@ span, p{
   height: 30px;
   margin: 0 auto;
   border-radius: 15px;
-  background-color: cadetblue;
-  
-  
+  background-color: rgb(16, 27, 59);
+  color: white;
+}
+
+.pokedex--form{
+  display: flex;
+  place-content: center;
+}
+
+.pokedex--form .input {
+  background-color: rgb(238, 241, 250);
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.pokedex--form button {
+  /* width: 100px; */
+  font-size: 2rem;
+  border-radius: 0 5px 5px 0;
+  background: rgb(16, 27, 59);
+  color: white;
+  padding: 5px  
 }
 
 .pokedex-next {
@@ -125,21 +144,11 @@ span, p{
   margin: 10px;
   width: 100px;
   height: 30px;
-  border-radius: 15px;
-  background-color: cadetblue;
+  border-radius: 10px;
+  background-color: rgb(16, 27, 59);
+  color: white;
+  
 }
-
-
-/* #pokemons  {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-#pokemons li {
-  display: flex;
-  flex-wrap: wrap;
-}*/
 
 .pokemonsListNew h2{
   /* width: 100%; */
@@ -163,9 +172,6 @@ span, p{
   background-color: cadetblue;
 }
 
-
-
-
 #pokemons{
   display: flex;
   place-content: center;
@@ -185,8 +191,14 @@ span, p{
   padding: 5px;
   border-radius: 15px;
   box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
-  /* background-color: #adb5bd; */
-  
+}
+
+#pokemons li.loader{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid red;
+  margin: 0 auto;
 }
 #pokemons li img{
   width: 100px;
@@ -195,15 +207,12 @@ span, p{
   align-self: center;
 }
 
-
 .pokemon-card {
-  /* border: 2px solid black; */
   padding: 10px;
   background-color: #413838;
   border-radius: 10px;
   
 } 
-
 
 .pokemon-card h3{
   font-size: 3rem;
@@ -215,68 +224,54 @@ span, p{
   padding: 3px;
   border-radius: 10px;
   background-color: cadetblue;
-  
 }
-
 
 /* Pokemon type */
 
 .grass{
-  /* border: 5px solid #004b23; */
   background: #38b000;
 }
 
 .fire{
-  /* border: 5px solid #641220; */
   background: #a11d33;
 }
 
 .water{
-  /* border: 5px solid #001845; */
   background: #0353a4;
 }
 
 .psychic{
-  /* border: 5px solid #f9a825; */
   background: #f9a825;
 }
 
 .normal {
-  /* border: 5px solid #a8a878; */
   background: #a8a878;
 }
 
 .electric {
-  /* border: 5px solid #f7d02c; */
   background: #f7d02c;
 }
 
 .ice {
-  /* border: 5px solid #00d9ff; */
   background: #00d9ff;
 }
 
 .bug{
-  /* border: 5px solid #7d7d7d; */
   background: #7d7d7d;
 }
 
 .dark {
-  /* border: 5px solid #705848; */
   background: #0a0a0a;
 }
 .rock{
-  /* border: 5px solid #9a9a9a; */
   background: #9a9a9a;
 }
 
 .ghost{
-  /* border: 5px solid #705848; */
   background: #705848;
 }
 
 .ground {
-  /* border: 5px solid #9a9a9a; */
   background: #9a9a9a;
 }
 
@@ -297,6 +292,7 @@ span, p{
 .fighting{
   background: #c22e28;
 }
+
 footer {
   padding: 5px;
   font-size: 1.5rem;
