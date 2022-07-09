@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" description="Julian Molina" />
+  <title>PokeAPI</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header>
+    <h1>PokeAPI ⚡</h1>
+  </header>
+  <main class="pokedex">
+    <section class="pokedex-pokemon">
+      <h2 class="pokedex--name" id="pokeName"></h2>
+      <div class="pokemon-img">
+        <button class="pokemon-button" onclick="prevImg()">
+          <
+        </button>
+        <img src="" alt="name's pokemon" id="pokeImg">
+        <button class="pokemon-button" 
+        onclick="nextImg()">
+          >
+        </button>
+      </div>
+      <form onsubmit="searchPokemon()" class="pokedex--form">
+        <input type="text" name="search" class="input">
+        <button type="submit" >Search</button>
+      </form>
+      <div class="pokedex-next">
+        <button class="pokedex-button" onclick="prevPokemon()">
+          Prev Pokemon
+        </button>
+        <button class="pokedex-button" onclick="nextPokemon()">
+          Next Pokemon
+        </button>
+      </div>
+      <section class="pokedex-info">
+
+        <div class="pokemon-description pokemon-desc__one">
+          <p id="desc"></p>
+        </div>
+        <ul class="pokedex-evolution" id="evol">
+        </ul>
+      </section>
+      <div class="pokemon--stats">
+        <div class="pokemon--hp">
+          <span>Health Points</span>
+          <div class="progress-bar">
+            <span id="hp">0</span>
+          </div>
+        </div>
+        <div class="pokemon--Attack">
+          <span>Attack</span>
+          <div class="progress-bar">
+            <span id="atk">0</span>
+          </div>
+        </div>
+        <div class="pokemon-defense">
+          <span>Defense</span>
+          <div class="progress-bar">
+            <span id="dfs">0</span>
+          </div>
+        </div>
+        <div class="pokemon-attack-sp">
+          <span>Attack Special</span>
+          <div class="progress-bar">
+            <span id="sp-atk">0</span>
+          </div>
+        </div>
+        <div class="pokemon-defense-sp">
+          <span>Defense Special</span>
+          <div class="progress-bar">
+            <span id="sp-dfs">0</span>
+          </div>
+        </div>
+        <div class="pokemon-speed">
+          <span>Speed</span>
+          <div class="progress-bar">
+            <span id="spd">0</span>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+  <section class="pokemonsListNew">
+    <h2>More pokemon</h2>
+    <div class="pokemonsListNew--button">
+      <button onclick="prevPokemons()">Prev pokemons</button>
+      <button  onclick="nextPokemons()">Next pokemons</button>
+    </div>
+    <ul id="pokemons"></ul>
+  </section>
+
+  <footer>
+    <h2>Made by Julian Molina and Platzi 💚</h2> 
+  </footer>
+  <script src="./nodes.js"></script>
+  <script src="./index.js"></script>
+</body>
+</html>

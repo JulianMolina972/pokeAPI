@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #121F3D;
+  color: white;
+
+}
+
+ul, li {
+  list-style: none;
+}
+
+header, footer{
+  width: 100%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+}
+button:hover {
+  cursor: pointer;
+}
+span, p{
+  font-size: 1.5rem;
+}
+
+.pokedex--name{
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+  top: 10px;
+}
+.pokedex {
+  display: flex;
+  place-content: center;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 30px;
+  padding: 0 20px;
+  background-color: #fb2934;
+}
+
+.pokedex-pokemon{
+  max-width: 500px;
+}
+
+.pokemon--stats {
+  padding: 0 20px;
+}
+.pokemon--stats span{
+  display: block;
+  padding: 3px 0;
+}
+
+.pokemon-speed{
+  margin-bottom: 20px;
+}
+.progress-bar {
+  width: 100%;
+  text-align: center;
+  border: 2px solid rgb(63, 53, 53);
+}
+
+.progress-bar span {
+  background-color: #1c3163;
+}
+
+.pokemon-description{
+  text-transform: lowercase;
+  margin-bottom: 10px;
+  top: 15px;
+  
+}
+.pokemon-desc__one{
+  padding: 0 20px;
+}
+.pokemon-img {
+  display: flex;
+  margin: 0 auto;
+}
+
+.pokemon-img img {
+  max-width: 300px;
+  max-height: 300px;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.pokemon-button {
+  /* position: sticky; */
+  place-self: center;
+  top: 200px;
+  width: 60px;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: rgb(16, 27, 59);
+  color: white;
+}
+
+.pokedex--form{
+  display: flex;
+  place-content: center;
+}
+
+.pokedex--form .input {
+  background-color: rgb(238, 241, 250);
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 2rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.pokedex--form button {
+  /* width: 100px; */
+  font-size: 2rem;
+  border-radius: 0 5px 5px 0;
+  background: rgb(16, 27, 59);
+  color: white;
+  padding: 5px  
+}
+
+.pokedex-next {
+  display: flex;
+  place-content: center;
+  margin: 10px auto;
+}
+
+.pokedex-button {
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(16, 27, 59);
+  color: white;
+  
+}
+
+.pokemonsListNew h2{
+  /* width: 100%; */
+  text-align: center;
+  font-size: 3.5rem;
+  margin: 10px ;
+}
+
+.pokemonsListNew--button {
+  display: flex;
+  place-content: center;
+  
+}
+
+.pokemonsListNew--button button {
+  font-size-adjust: inherit;
+  font-size: 2rem;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: cadetblue;
+}
+
+#pokemons{
+  display: flex;
+  place-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#pokemons li{
+  width: 30%;
+  min-width: 300px;
+  max-width: 350px;
+  display: flex;
+  
+  margin: 10px;
+  font-size: .8rem;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+#pokemons li.loader{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 3px solid red;
+  margin: 0 auto;
+}
+#pokemons li img{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-self: center;
+}
+
+.pokemon-card {
+  padding: 10px;
+  background-color: #413838;
+  border-radius: 10px;
+  
+} 
+
+.pokemon-card h3{
+  font-size: 3rem;
+} 
+
+.details-button {
+  width: 80%;
+  margin-left: 23px;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: cadetblue;
+}
+
+/* Pokemon type */
+
+.grass{
+  background: #38b000;
+}
+
+.fire{
+  background: #a11d33;
+}
+
+.water{
+  background: #0353a4;
+}
+
+.psychic{
+  background: #f9a825;
+}
+
+.normal {
+  background: #a8a878;
+}
+
+.electric {
+  background: #f7d02c;
+}
+
+.ice {
+  background: #00d9ff;
+}
+
+.bug{
+  background: #7d7d7d;
+}
+
+.dark {
+  background: #0a0a0a;
+}
+.rock{
+  background: #9a9a9a;
+}
+
+.ghost{
+  background: #705848;
+}
+
+.ground {
+  background: #9a9a9a;
+}
+
+.poison{
+  background: rgb(195, 0, 255);
+}
+
+.fairy{
+  background: #f925cb;
+}
+.dragon {
+  background: #d1ebf7;
+}
+.steel{
+  background: rgb(122,123,119);
+}
+
+.fighting{
+  background: #c22e28;
+}
+
+footer {
+  padding: 5px;
+  font-size: 1.5rem;
+  background-color:#181612 ;
+}
+
