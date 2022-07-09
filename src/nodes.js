@@ -7,3 +7,6 @@ const pokeDef = $('#dfs');
 const pokeAtkSp = $('#sp-atk');
 const pokeDefSp = $('#sp-dfs');
 const pokeSpd = $('#spd');
+const pokemonsList = $('#pokemons');
+
+

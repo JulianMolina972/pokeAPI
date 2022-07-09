@@ -1,15 +1,20 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html {
-  margin: 0;
-  padding: 0;
   font-size: 62.5%;
 }
 
 body {
   font-family: sans-serif;
+
+}
+
+ul, li {
+  list-style: none;
 }
 
 header, footer{
@@ -17,31 +22,147 @@ header, footer{
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  margin: 15px 0;
+  /* margin: 15px 0; */
 }
 
-
+span, p{
+  font-size: 1.5rem;
+}
 .pokedex {
   display: flex;
+  place-content: center;
   width: 90%;
   margin: 0 auto;
-  border: 2px solid black;
-  padding: 10px;
+  /* border: 2px solid black; */
+  border-radius: 30px;
+  padding: 0 20px;
   background-color: #fb2934;
 }
 
-.pokedex-info .pokedex-pokemon {
-  width: 50%;
+.pokemon--stats span{
+  display: block;
+
+}
+.progress-bar {
+  width: 100%;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.progress-bar span {
+  background-color: gray;
+}
+
+
+
+.pokemon-description{
+  /* position: absolute;
+  width: 400px;
+  height: 100px; */
+  text-transform: lowercase;
+  margin-bottom: 10px;
+  top: 15px;
+}
+.pokemon-img {
+  display: flex;
+  margin: 0 auto;
+  /* width: 100px;
+  height: 100px; */
+  /* place-content: center; */
 }
 
 .pokemon-img img {
-  width: 40%;
-  height: 30px;
+  /* display: flex; */
+  width: 50%;
+  height: 50%;
   object-fit: cover;
+
 
 }
 
 
+.pokemon-button {
+  /* position: sticky; */
+  place-self: center;
+  top: 200px;
+  width: 60px;
+  height: 30px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: cadetblue;
+  
+  
+}
+
+.pokedex-next {
+  display: flex;
+  place-content: center;
+  margin: 10px auto;
+}
+
+.pokedex-button {
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: cadetblue;
+}
+
+
+/* #pokemons  {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#pokemons li {
+  display: flex;
+  flex-wrap: wrap;
+}*/
+
+
+#pokemons{
+  display: flex;
+  place-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#pokemons li{
+  width: 30%;
+  min-width: 300px;
+  max-width: 350px;
+  display: flex;
+  
+  margin: 10px;
+  font-size: .8rem;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: black;
+  
+}
+#pokemons li img{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-self: center;
+}
+
+
+.pokemon-card {
+  border: 2px solid black;
+  padding: 10px;
+  background-color: #fb2934;
+  
+} 
+
+.pokemon-card h3{
+  font-size: 3rem;
+} 
+
 footer {
+  
   font-size: 1.5rem;
+  background-color:#efb810 ;
 }

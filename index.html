@@ -23,52 +23,81 @@
         onclick="nextImg()">
           >
         </button>
-        <div class="pokemon--stats">
-          <div class="pokemon--hp">
-            <span>Health Points</span>
+      </div>
+      <div class="pokedex-next">
+        <button class="pokedex-button" onclick="prevPokemon()">
+          Prev Pokemon
+        </button>
+        <button class="pokedex-button" onclick="nextPokemon()">
+          Next Pokemon
+        </button>
+      </div>
+      <section class="pokedex-info">
+
+        <div class="pokemon-description">
+          <p id="desc"></p>
+        </div>
+        <ul class="pokedex-evolution" id="evol">
+        </ul>
+      </section>
+      <div class="pokemon--stats">
+        <div class="pokemon--hp">
+          <span>Health Points</span>
+          <div class="progress-bar">
             <span id="hp">0</span>
           </div>
-          <div class="pokemon--Attack">
-            <span>Attack</span>
+        </div>
+        <div class="pokemon--Attack">
+          <span>Attack</span>
+          <div class="progress-bar">
             <span id="atk">0</span>
           </div>
-          <div class="pokemon-defense">
-            <span>Defense</span>
+        </div>
+        <div class="pokemon-defense">
+          <span>Defense</span>
+          <div class="progress-bar">
             <span id="dfs">0</span>
           </div>
-          <div class="pokemon-attack-sp">
-            <span>Attack Special</span>
+        </div>
+        <div class="pokemon-attack-sp">
+          <span>Attack Special</span>
+          <div class="progress-bar">
             <span id="sp-atk">0</span>
           </div>
-          <div class="pokemon-defense-sp">
-            <span>Defense Special</span>
+        </div>
+        <div class="pokemon-defense-sp">
+          <span>Defense Special</span>
+          <div class="progress-bar">
             <span id="sp-dfs">0</span>
           </div>
-          <div class="pokemon-speed">
-            <span>Speed</span>
+        </div>
+        <div class="pokemon-speed">
+          <span>Speed</span>
+          <div class="progress-bar">
             <span id="spd">0</span>
           </div>
         </div>
-        <div class="pokedex-next">
-          <button class="pokedex-button" onclick="prevPokemon()">
-            Prev Pokemon
-          </button>
-          <button class="pokedex-button" onclick="nextPokemon()">
-            Next Pokemon
-          </button>
-        </div>
       </div>
+      
     </section>
-    <section class="pokedex-info">
-
-      <div class="pokemon-description">
-        <p id="desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore, non consequuntur error</p>
-      </div>
-      <ul class="pokedex-evolution" id="evol">
-      </ul>
-    </section>
+    <!-- <div class="pokedex-next">
+      <button class="pokedex-button" onclick="prevPokemon()">
+        Prev Pokemon
+      </button>
+      <button class="pokedex-button" onclick="nextPokemon()">
+        Next Pokemon
+      </button>
+    </div> -->
+  
 
   </main>
+
+  <section>
+    <button onclick="prevPokemons()">Prev pokemons</button>
+    <button  onclick="nextPokemons()">Next pokemons</button>
+    <h2>The best pokemon</h2>
+    <ul id="pokemons"></ul>
+  </section>
 
   <footer>
     <h2>Made by Julian Molina and Platzi 💚</h2> 
