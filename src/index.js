@@ -14,10 +14,12 @@ const fetchData = async (api) => {
 
 const writeDescription = async (api, node) => {
   const specie = await fetchData(api);
+  
   node.textContent = specie.flavor_text_entries[0].flavor_text;
 }
 
 const printPokemon = async (pokemon) => {
+  window.scrollTo(0, 0);
   const data = await fetchData(`${POKEMON_API}/${pokemon}`);
   (sprites.length > 0)
   ? sprites = []
@@ -25,23 +27,17 @@ const printPokemon = async (pokemon) => {
   currentPokemon = data;
   pokeImg.src = data.sprites.front_default;
   // pokeDesc.textContent = data.name;
-  const iteratePokemon = data.stats.map(stat => {return stat.base_stat});
-    pokeHp.textContent = iteratePokemon[0];
-    pokeHp.style.width = `${iteratePokemon[0]}%`;
-    pokeAtk.textContent = iteratePokemon[1];
-    pokeAtk.style.width = `${iteratePokemon[1]}%`;
-    pokeDef.textContent = iteratePokemon[2];
-    pokeDef.style.width = `${iteratePokemon[2]}%`;
-    pokeAtkSp.textContent = iteratePokemon[3];
-    pokeAtkSp.style.width = `${iteratePokemon[3]}%`;
-    pokeDefSp.textContent = iteratePokemon[4];
-    pokeDefSp.style.width = `${iteratePokemon[4]}%`;
-    pokeSpd.textContent = iteratePokemon[5];
-    pokeSpd.style.width = `${iteratePokemon[5]}%`;
-    writeDescription(data.species.url, pokeDesc);
-    const pokeSprites = currentPokemon.sprites; 
+  [pokeHp, pokeAtk, pokeDef, pokeAtkSp, pokeDefSp, pokeSpd].map(
+    (node, index) => {
+      node.style.width = `${data.stats[index].base_stat/2}%`;
+      node.textContent = data.stats[index].base_stat;
+    }
+  );
+  
+  writeDescription(data.species.url, pokeDesc);
+  const pokeSprites = currentPokemon.sprites; 
     
-  for (let key in pokeSprites) {
+  for (const key in pokeSprites) {
     if (typeof pokeSprites[key] === 'string') {
       sprites.push(pokeSprites[key]);
     }
@@ -57,13 +53,14 @@ const printPokemons = async (api) => {
   pokemons.results.map(async (pokemon) => {
     const listItem = document.createElement('li');
     const details = await fetchData(pokemon.url);
+    listItem.classList.add(details.types[0].type.name);
     listItem.innerHTML = `
     <img src="${details.sprites.front_default}" alt="${details.name}" />
     <div class="pokemon-card"> 
       <h3>${details.name}</h3>
       ${details.types.map(type => `<span>${type.type.name}</span>`)}
-      <p id="${details.name}"></p>
-      <button onclick=printPokemon(${details.id})>Show pokemon</button>
+      <p id="${details.name}" class="pokemon-description"></p>
+      <button  class="details-button" onclick=printPokemon(${details.id})>Show pokemon</button>
     </div>
 
     `;
@@ -99,20 +96,32 @@ const nextPokemon = () => {
 
 const prevPokemon = () => {
   currentPokemon.id === 1 
-  ? currentPokemon.id = 151
+  ? currentPokemon.id = 300
   : null 
   const prev = currentPokemon.id - 1;
   printPokemon(prev);
 }
 
 const nextPokemons = async () => {
+  pokemonsList.innerHTML = "";
   const newData = await fetchData(listPokemons.next);
   printPokemons(newData.next);
 }
 
 const prevPokemons = async () => {
-  const newData = await fetchData(listPokemons.previous);
-  printPokemons(newData.previous);
+  try {
+    pokemonsList.innerHTML = "";
+    
+    if(listPokemons.previous === null) {
+      const newData = await fetchData(listPokemons.next);
+      printPokemons(newData.previous);
+    } else {
+      const newData = await fetchData(listPokemons.previous);      
+      printPokemons(newData.previous);
+    }
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 
